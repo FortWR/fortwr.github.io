@@ -1,0 +1,56 @@
+﻿@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(s/mulish/v13/1Ptyg83HX_SGhgqO0yLcmjzUAuWexZNRwaA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(s/mulish/v13/1Ptyg83HX_SGhgqO0yLcmjzUAuWexXRWwaA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-NYi1UA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-1UA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(s/unbounded/v8/Yq6F-LOTXCb04q32xlpat-6uR42XTqtG6xjx040.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(s/unbounded/v8/Yq6F-LOTXCb04q32xlpat-6uR42XTqtG6yrx040.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(s/unbounded/v8/Yq6F-LOTXCb04q32xlpat-6uR42XTqtG6__2040.ttf) format('truetype');
+}
