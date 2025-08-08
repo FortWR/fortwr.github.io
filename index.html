@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДФК Авангард</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-futbol logo-icon"></i>
+                <h1 class="logo-text">ДФК Авангард</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#main">Главная</a></li>
+                    <li><a href="#matches">Матчи</a></li>
+                    <li>
+                        <div class="theme-switcher">
+                            <span class="theme-text">Светлая</span>
+                            <label class="theme-switch">
+                                <input type="checkbox" id="theme-toggle">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="theme-text">Темная</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="main">
+        <div class="hero-content">
+            <h2 class="hero-title">ДФК Авангард</h2>
+            <p class="hero-subtitle">Сила. Страсть. Победа.</p>
+            <a href="#matches" class="hero-btn">Смотреть матчи</a>
+        </div>
+    </section>
+
+    <section class="matches-section" id="matches">
+        <h2 class="section-title">Ближайшие матчи</h2> <!-- Исправлено здесь -->
+        <div class="matches-container">
+            <div class="no-matches">
+                <i class="fas fa-calendar-alt"></i> Матчей пока не запланировано
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2 class="section-title">Статистика</h2>
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value">1</div>
+                <div class="stat-title">Сыграно</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1</div>
+                <div class="stat-title">Побед</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">0</div>
+                <div class="stat-title">Поражений</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <i class="fas fa-futbol logo-icon"></i>
+                <h2 class="logo-text">ДФК Авангард</h2>
+            </div>
+            
+            <div class="social-links">
+                <a href="t.me/AVANGARD_AVTAZOVOD" class="social-btn tg-btn" target="_blank">
+                    <i class="fab fa-telegram"></i> Наш Telegram
+                </a>
+                <a href="https://github.com/DFKCOMMAND?tab=repositories" class="social-btn gh-btn" target="_blank">
+                    <i class="fab fa-github"></i> Наш GitHub
+                </a>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Переключатель темы
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const themeText = document.querySelector('.theme-text');
+
+        // Проверяем сохраненную тему
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            htmlElement.setAttribute('data-theme', 'dark');
+            themeToggle.checked = true;
+            themeText.textContent = 'Темная';
+        } else {
+            themeText.textContent = 'Светлая';
+        }
+
+        // Обработчик переключения темы
+        themeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                htmlElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeText.textContent = 'Темная';
+            } else {
+                htmlElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeText.textContent = 'Светлая';
+            }
+        });
+    </script>
+</body>
+</html>
