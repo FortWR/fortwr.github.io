@@ -95,6 +95,7 @@
             --github-purple: #6e5494;
             --support-orange: #FF9800;
             --donate-gold: #FFD700;
+            --tiktok-black: #000000;
             
             /* Основные цвета */
             --bg-color: #ffffff;
@@ -120,6 +121,7 @@
             --light-red: #7f0000;
             --light-gray: #2a2a2a;
             --donate-gold: #e6c200;
+            --tiktok-black: #121212;
         }
 
         body {
@@ -509,6 +511,7 @@
         .social-btn:nth-child(2) { animation: fadeUp 0.5s ease-out 5.2s forwards; }
         .social-btn:nth-child(3) { animation: fadeUp 0.5s ease-out 5.4s forwards; }
         .social-btn:nth-child(4) { animation: fadeUp 0.5s ease-out 5.6s forwards; }
+        .social-btn:nth-child(5) { animation: fadeUp 0.5s ease-out 5.8s forwards; }
 
         .tg-btn {
             background-color: var(--telegram-blue);
@@ -531,6 +534,43 @@
             font-weight: 700;
             animation: pulseGold 2s infinite;
         }
+        
+        .tiktok-btn {
+            background-color: var(--tiktok-black);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tiktok-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                #ff0050,
+                #ff0050 25%,
+                #000000 25%,
+                #000000 50%,
+                #00f2ea 50%,
+                #00f2ea 75%,
+                #000000 75%,
+                #000000
+            );
+            background-size: 20px 20px;
+            opacity: 0.2;
+            z-index: 0;
+            transform: rotate(45deg);
+            animation: tiktokShine 3s infinite linear;
+        }
+        
+        .tiktok-btn span {
+            position: relative;
+            z-index: 1;
+        }
 
         .social-btn:hover {
             transform: translateY(-5px);
@@ -546,7 +586,7 @@
             font-size: 1rem;
             opacity: 0.8;
             opacity: 0;
-            animation: fadeIn 0.8s ease-out 5.8s forwards;
+            animation: fadeIn 0.8s ease-out 6s forwards;
         }
 
         /* Анимации */
@@ -566,6 +606,11 @@
             0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.5); }
             70% { box-shadow: 0 0 0 12px rgba(255, 215, 0, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+        
+        @keyframes tiktokShine {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
         }
 
         @keyframes fadeInUp {
@@ -772,11 +817,14 @@
             </div>
             
             <div class="social-links">
-                <a href="t.me/AVANGARD_AVTAZOVOD" class="social-btn tg-btn" target="_blank">
+                <a href="https://t.me/AVANGARD_AVTAZOVOD" class="social-btn tg-btn" target="_blank">
                     <i class="fab fa-telegram"></i> Наш Telegram
                 </a>
                 <a href="https://github.com/DFKCOMMAND?tab=repositories" class="social-btn gh-btn" target="_blank">
                     <i class="fab fa-github"></i> Наш GitHub
+                </a>
+                <a href="https://tiktok.com/@dfc_avangard" class="social-btn tiktok-btn" target="_blank">
+                    <i class="fab fa-tiktok"></i> Наш TikTok
                 </a>
                 <a href="https://t.me/fixtien" class="social-btn support-btn" target="_blank">
                     <i class="fas fa-life-ring"></i> Поддержка
@@ -785,7 +833,7 @@
                     <i class="fas fa-hand-holding-heart"></i> Поддержать нас
                 </a>
             </div>
-            
+
         </div>
     </footer>
 
