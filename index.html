@@ -96,6 +96,7 @@
             --support-orange: #FF9800;
             --donate-gold: #FFD700;
             --tiktok-black: #000000;
+            --match-green: #4CAF50;
             
             /* Основные цвета */
             --bg-color: #ffffff;
@@ -122,6 +123,7 @@
             --light-gray: #2a2a2a;
             --donate-gold: #e6c200;
             --tiktok-black: #121212;
+            --match-green: #388E3C;
         }
 
         body {
@@ -404,16 +406,26 @@
             animation: scaleIn 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3.4s forwards;
         }
 
-        .no-matches {
+        .match-info {
             font-size: 1.8rem;
             color: var(--text-color);
             margin: 2rem 0;
             padding: 2rem;
-            background-color: var(--light-red);
+            background-color: var(--match-green);
             border-radius: 10px;
-            animation: bounce 2s infinite 4s;
+            color: white;
+            font-weight: 600;
+            animation: pulse 2s infinite;
             opacity: 0;
-            animation: fadeIn 0.6s ease-out 3.8s forwards, bounce 2s infinite 4.4s;
+            animation: fadeIn 0.6s ease-out 3.8s forwards, pulse 2s infinite 4.4s;
+        }
+
+        .match-details {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            color: var(--text-color);
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out 4s forwards;
         }
 
         /* Статистика */
@@ -592,7 +604,7 @@
         /* Анимации */
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
 
@@ -715,9 +727,13 @@
                 width: 100%;
             }
             
-            .no-matches {
+            .match-info {
                 font-size: 1.4rem;
                 padding: 1.5rem;
+            }
+            
+            .match-details {
+                font-size: 1.1rem;
             }
             
             .social-links {
@@ -785,9 +801,13 @@
     <section class="matches-section" id="matches">
         <h2 class="section-title">Ближайшие матчи</h2>
         <div class="matches-container">
-            <div class="no-matches">
-                <i class="fas fa-calendar-alt"></i> Матчей пока не запланировано
+            <div class="match-info">
+                <i class="fas fa-calendar-day"></i> В среду в 12:00
             </div>
+            <p class="match-details">
+                ДФК Авангард против Адреналин<br>
+                 г. Нижний Новгород
+            </p>
         </div>
     </section>
 
@@ -817,7 +837,7 @@
             </div>
             
             <div class="social-links">
-                <a href="https://t.me/AVANGARD_AVTAZOVOD" class="social-btn tg-btn" target="_blank">
+                <a href="t.me/AVANGARD_AVTAZOVOD" class="social-btn tg-btn" target="_blank">
                     <i class="fab fa-telegram"></i> Наш Telegram
                 </a>
                 <a href="https://github.com/DFKCOMMAND?tab=repositories" class="social-btn gh-btn" target="_blank">
@@ -833,7 +853,7 @@
                     <i class="fas fa-hand-holding-heart"></i> Поддержать нас
                 </a>
             </div>
-
+            
         </div>
     </footer>
 
