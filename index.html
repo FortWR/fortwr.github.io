@@ -98,6 +98,7 @@
             --tiktok-black: #000000;
             --match-green: #4CAF50;
             --members-blue: #2196F3;
+            --vk-blue: #4A76A8;
             
             /* Основные цвета */
             --bg-color: #ffffff;
@@ -126,6 +127,7 @@
             --tiktok-black: #121212;
             --match-green: #388E3C;
             --members-blue: #1976D2;
+            --vk-blue: #3d5f82;
         }
 
         body {
@@ -471,7 +473,18 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, background-color 0.3s;
             border: 1px solid var(--border-color);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.5s ease-out forwards;
         }
+
+        .member-card:nth-child(1) { animation-delay: 0.2s; }
+        .member-card:nth-child(2) { animation-delay: 0.4s; }
+        .member-card:nth-child(3) { animation-delay: 0.6s; }
+        .member-card:nth-child(4) { animation-delay: 0.8s; }
+        .member-card:nth-child(5) { animation-delay: 1.0s; }
+        .member-card:nth-child(6) { animation-delay: 1.2s; }
+        .member-card:nth-child(7) { animation-delay: 1.4s; }
 
         .member-card:hover {
             transform: translateY(-5px);
@@ -592,6 +605,7 @@
         .social-btn:nth-child(3) { animation: fadeUp 0.5s ease-out 5.4s forwards; }
         .social-btn:nth-child(4) { animation: fadeUp 0.5s ease-out 5.6s forwards; }
         .social-btn:nth-child(5) { animation: fadeUp 0.5s ease-out 5.8s forwards; }
+        .social-btn:nth-child(6) { animation: fadeUp 0.5s ease-out 6.0s forwards; }
 
         .tg-btn {
             background-color: var(--telegram-blue);
@@ -620,6 +634,11 @@
             color: white;
             position: relative;
             overflow: hidden;
+        }
+        
+        .vk-btn {
+            background-color: var(--vk-blue);
+            color: white;
         }
         
         .tiktok-btn::before {
@@ -666,7 +685,7 @@
             font-size: 1rem;
             opacity: 0.8;
             opacity: 0;
-            animation: fadeIn 0.8s ease-out 6s forwards;
+            animation: fadeIn 0.8s ease-out 6.2s forwards;
         }
 
         /* Анимации */
@@ -875,10 +894,10 @@
         <h2 class="section-title">Ближайшие матчи</h2>
         <div class="matches-container">
             <div class="match-info">
-                <i class="fas fa-calendar-day"></i> В среду в 12:00
+                <i class="fas fa-calendar-day"></i> Скоро
             </div>
             <p class="match-details">
-                ДФК Авангард против Сигма Юнайтед<br>
+                ДФК Авангард против ?<br>
                  г. Нижний Новгород
             </p>
         </div>
@@ -914,7 +933,7 @@
                 </div>
                 <div class="member-card">
                     <i class="fas fa-user"></i>
-                    <h3 class="member-name">Константин Деревягин Игорович (программист)</h3>
+                    <h3 class="member-name">Константин Деревягин Игоревич</h3>
                 </div>
             </div>
         </div>
@@ -955,6 +974,9 @@
                 <a href="https://tiktok.com/@dfc_avangard" class="social-btn tiktok-btn" target="_blank">
                     <i class="fab fa-tiktok"></i> Наш TikTok
                 </a>
+                <a href="https://vk.com/club232121282" class="social-btn vk-btn" target="_blank">
+                    <i class="fab fa-vk"></i> Наш ВК
+                </a>
                 <a href="https://t.me/fixtien" class="social-btn support-btn" target="_blank">
                     <i class="fas fa-life-ring"></i> Поддержка
                 </a>
@@ -963,6 +985,8 @@
                 </a>
             </div>
             
+            <div class="copyright">
+            </div>
         </div>
     </footer>
 
@@ -995,16 +1019,18 @@
         // Переключатель темы
         const themeToggle = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
-        const themeText = document.querySelector('.theme-text');
+        const themeTexts = document.querySelectorAll('.theme-text');
 
         // Проверяем сохраненную тему
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             htmlElement.setAttribute('data-theme', 'dark');
             themeToggle.checked = true;
-            themeText.textContent = 'Темная';
+            themeTexts[0].textContent = 'Темная';
+            themeTexts[1].textContent = 'Темная';
         } else {
-            themeText.textContent = 'Светлая';
+            themeTexts[0].textContent = 'Светлая';
+            themeTexts[1].textContent = 'Светлая';
         }
 
         // Обработчик переключения темы
@@ -1012,11 +1038,13 @@
             if (this.checked) {
                 htmlElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                themeText.textContent = 'Темная';
+                themeTexts[0].textContent = 'Темная';
+                themeTexts[1].textContent = 'Темная';
             } else {
                 htmlElement.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
-                themeText.textContent = 'Светлая';
+                themeTexts[0].textContent = 'Светлая';
+                themeTexts[1].textContent = 'Светлая';
             }
         });
 
